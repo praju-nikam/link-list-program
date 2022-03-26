@@ -38,6 +38,29 @@ public class LinkedList {
         System.out.println("Null");
     }
 
+    // create Method & Add Element Last in addLast Method
+    public void addLast(String data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node currentNode = head;
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+    }
+
+    // create Method & Delete First Element in deleteFirst Method
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        head = head.next;
+    }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         System.out.println(" Display The Result of Add");
@@ -45,5 +68,18 @@ public class LinkedList {
         linkedList.addFirst("This");
         linkedList.printList();
         System.out.println("===============================================");
+
+        System.out.println(" Display The Result of Add Last");
+        linkedList.addLast("List");
+        linkedList.printList();
+        System.out.println("===============================================");
+
+        System.out.println(" Display The Result of Delete First");
+        linkedList.deleteFirst();
+        linkedList.printList();
+        System.out.println("===============================================");
+
+
+
     }
 }
