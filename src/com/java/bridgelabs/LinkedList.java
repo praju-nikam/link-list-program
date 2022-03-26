@@ -24,20 +24,6 @@ public class LinkedList {
         head = newNode;
     }
 
-    // create Method & print the list use printList Method
-    public void printList() {
-        if (head == null) {
-            System.out.println("List is Empty");
-            return;
-        }
-        Node currentNode = head;
-        while (currentNode != null) {
-            System.out.print(currentNode.data + " -> ");
-            currentNode = currentNode.next;
-        }
-        System.out.println("Null");
-    }
-
     // create Method & Add Element Last in addLast Method
     public void addLast(String data) {
         Node newNode = new Node(data);
@@ -80,6 +66,21 @@ public class LinkedList {
         secondLast.next = null;
     }
 
+
+    // create Method & print the list use printList Method
+    public void printList() {
+        if (head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        Node currentNode = head;
+        while (currentNode != null) {
+            System.out.print(currentNode.data + " -> ");
+            currentNode = currentNode.next;
+        }
+        System.out.println("Null");
+    }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         System.out.println(" Display The Result of Add");
@@ -103,9 +104,5 @@ public class LinkedList {
         linkedList.deleteLast();
         linkedList.printList();
         System.out.println("===============================================");
-
-
-
-
     }
 }
