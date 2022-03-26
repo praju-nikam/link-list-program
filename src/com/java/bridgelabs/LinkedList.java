@@ -61,6 +61,25 @@ public class LinkedList {
         head = head.next;
     }
 
+    // create Method & Delete Last Element in deleteLast Method
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        Node secondLast = head;
+        Node lastNode = head.next;
+        while (lastNode.next != null) {
+            lastNode = lastNode.next;
+            secondLast = secondLast.next;
+        }
+        secondLast.next = null;
+    }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         System.out.println(" Display The Result of Add");
@@ -78,6 +97,13 @@ public class LinkedList {
         linkedList.deleteFirst();
         linkedList.printList();
         System.out.println("===============================================");
+
+
+        System.out.println(" Display The Result of Delete last");
+        linkedList.deleteLast();
+        linkedList.printList();
+        System.out.println("===============================================");
+
 
 
 
